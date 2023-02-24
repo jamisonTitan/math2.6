@@ -11,6 +11,6 @@ binomialPmf = binom.pmf(k, n, p)
 plt.plot(k, binomialPmf, color='blue')
 plt.plot(8, 0.12, marker="o", markersize=20, markeredgecolor="black", markerfacecolor="green")
 plt.title(f"Question 6")
-plt.show()
+plt.savefig("question6.1_graph.png")
 
-print(binomialPmf)
+print(binomialPmf[8])
