@@ -9,7 +9,8 @@ k = np.arange(0,n+1)
 binomialPmf = binom.pmf(k, n, p)
 
 plt.plot(k, binomialPmf, color='blue')
-plt.title(f"Binomial Distribution (n={n}, p={p})")
+plt.plot(8, 0.12, marker="o", markersize=20, markeredgecolor="black", markerfacecolor="green")
+plt.title(f"Question 6")
 plt.show()
 
 print(binomialPmf)
