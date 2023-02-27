@@ -3,7 +3,7 @@ from matplotlib import pyplot as plt
 import random
 
 
-numTrials = int(10**4.5)
+numTrials = int(10**3)
 
 plt.rcParams["figure.figsize"] = [16, 10]
 plt.rcParams["figure.autolayout"] = True
@@ -31,6 +31,7 @@ plt.plot(x,g(x),color='blue', linewidth=5)
 #generate random points
 points = [(random.random(), random.random()) for i in range(numTrials)]
 
+#used to keep track of the number of generated random points inside the two functions f(x) and g(x)
 count = 0
 
 #plot points
@@ -39,8 +40,7 @@ for point in points:
         if isBetween: return "orange"
         else: return "grey"
     #if point i between lines add 1 to count and draw point in orange on graph
-    pointIsBetween = pointIsBetweenCurves(point)
-    if pointIsBetween:
+    if pointIsBetween := pointIsBetweenCurves(point):
         count += 1
     plt.plot(point[0],point[1], marker="o", markersize=2, color=pointColor(pointIsBetween))
 
